@@ -1,0 +1,123 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { PDFViewer, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Box, Text, VStack, HStack, Flex, List, ListItem, ListIcon , Icon  } from '@chakra-ui/react';
+import { FaStar } from 'react-icons/fa';
+// Create styles for the PDF
+const styles = StyleSheet.create({
+  page: {
+    backgroundColor: 'black',
+    color: 'white',
+    padding: 10,
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+  },
+  title: {
+    fontSize: 24,
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  heading: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  text: {
+    fontSize: 12,
+    marginBottom: 5,
+  },
+  skill: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  star: {
+    color: 'orange',
+    marginLeft: 5,
+  },
+  border: {
+    border: '1px solid white',
+    width: '18vw',
+    height: '6vh',
+    borderRadius: '22px',
+    textAlign: 'center',
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    margin: '0 auto',
+  },
+});
+
+const WebDevelopersPDF = () => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.border}>
+        <Text>WEB DEVELOPERS</Text>
+      </View>
+      <View style={styles.section}>
+        <Text style={styles.title}>Services</Text>
+        <Text style={styles.text}>We Provide Services:</Text>
+        <Text style={styles.text}>- Website Design and Development @15000</Text>
+        <Text style={styles.text}>- Responsive Website Design @6000</Text>
+        <Text style={styles.text}>- eCommerce Solutions @16000 @12500 including logo designing, payment gateway</Text>
+        <Text style={styles.text}>- Website Maintenance and Support @1000/month</Text>
+        <Text style={styles.text}>- Web Application Development @15000</Text>
+        <Text style={styles.text}>- Performance Optimization @2500</Text>
+        <Text style={styles.text}>- Web Hosting and Domain Management @1000/year</Text>
+        <Text style={styles.text}>- API Development and Integration @8000</Text>
+      </View>
+      <View style={styles.section}>
+        <Text style={styles.heading}>Experience</Text>
+        <Text style={styles.text}>- stylelox.com</Text>
+        <Text style={styles.text}>- delhisgotsstar.com</Text>
+        <Text style={styles.text}>- fancytemplates.com</Text>
+        <Text style={styles.text}>- bhartiyabasti.com</Text>
+        <Text style={styles.text}>- newsofnation.live</Text>
+        <Text style={styles.text}>- thetimesofgenz.com</Text>
+        <Text style={styles.text}>- cabjaipur.com</Text>
+        <Text style={styles.text}>- educationalmorph.com</Text>
+        <Text style={styles.text}>- arsheducationwelfaresociety.site</Text>
+        <Text style={styles.text}>- yatriduniya.site</Text>
+        <Text style={styles.text}>- primenews.live</Text>
+        <Text style={styles.text}>- punemirror.com</Text>
+        <Text style={styles.text}>- www.exclusiveadda.shop</Text>
+        <Text style={styles.text}>- +10 more</Text>
+      </View>
+      <View style={styles.section}>
+        <Text style={styles.heading}>Skills</Text>
+        <View style={styles.skill}>
+          <Text>Wordpress</Text>
+          {[...Array(5)].map((_, i) => (
+            <Text key={i} style={styles.star}>★</Text>
+          ))}
+        </View>
+        <View style={styles.skill}>
+          <Text>React</Text>
+          {[...Array(3)].map((_, i) => (
+            <Text key={i} style={styles.star}>★</Text>
+          ))}
+        </View>
+        <View style={styles.skill}>
+          <Text>ASP.Net</Text>
+          {[...Array(5)].map((_, i) => (
+            <Text key={i} style={styles.star}>★</Text>
+          ))}
+        </View>
+        <View style={styles.skill}>
+          <Text>Logo designing</Text>
+          {[...Array(5)].map((_, i) => (
+            <Text key={i} style={styles.star}>★</Text>
+          ))}
+        </View>
+      </View>
+    </Page>
+  </Document>
+);
+
+const App = () => (
+  <PDFViewer width="100%" height="1000">
+    <WebDevelopersPDF />
+  </PDFViewer>
+);
+
+export default App;
